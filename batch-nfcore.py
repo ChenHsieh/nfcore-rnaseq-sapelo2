@@ -4,6 +4,10 @@ import pandas as pd
 import numpy as np
 import subprocess
 
+# TODO - create directories for user, if they don't exist
+sub_directories = ["species", "clean", "count",
+                   "fastq", "map", "miscelaneous", "reference"]
+
 table = pd.read_csv("./input/sample_table.csv")
 directory_ids = list(set(table["folder_id"].to_numpy()))
 myID = table["myID"][0]

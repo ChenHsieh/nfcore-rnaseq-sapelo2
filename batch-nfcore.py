@@ -67,12 +67,7 @@ def transfer_data():
         shutil.copyfile(table.at[i, "fastq_dir"] + table.at[i, "sample_name"] + ".R2.fastq",
                         "./data/" + table.at[i, "folder_id"] + "/fastq/" + table.at[i, "sample_name"] + ".R2.fastq")
 
-        # copy get_trim_counts
-        if not os.path.isfile("./data/" + table.at[i, "folder_id"] + "get_trim_sum.py"):
-            print(
-                f'copying get_trim_sum.py to ./data/{table.at[i, "folder_id"]}')
-            shutil.copyfile("./helper_scripts/get_trim_sum.py",
-                            "./data/" + table.at[i, "folder_id"] + "/get_trim_sum.py")
+
 
 
 def generate_scripts():

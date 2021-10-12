@@ -1,0 +1,8 @@
+species,sample_name,folder_id,Scientific species name,E/L flowering,tissue,genome_fa,gene_gff3,fastq_dir,myID
+poplar,1T,potri,Populus trichocarpa,E,pollen,/work/cjtlab/popv3/Ptrichocarpa_444_v3.1/assembly/Ptrichocarpa_444_v3.0.fa,/work/cjtlab/popv3/annotation/Ptrichocarpa_444_v3.1.gene_exons.gff3,/scratch/ch29576/pollen_fastq_data/,ch29576
+poplar,2T,potri,Populus trichocarpa,E,pollen,/work/cjtlab/popv3/Ptrichocarpa_444_v3.1/assembly/Ptrichocarpa_444_v3.0.fa,/work/cjtlab/popv3/annotation/Ptrichocarpa_444_v3.1.gene_exons.gff3,/scratch/ch29576/pollen_fastq_data/,ch29576
+poplar,3T,potri,Populus trichocarpa,E,pollen,/work/cjtlab/popv3/Ptrichocarpa_444_v3.1/assembly/Ptrichocarpa_444_v3.0.fa,/work/cjtlab/popv3/annotation/Ptrichocarpa_444_v3.1.gene_exons.gff3,/scratch/ch29576/pollen_fastq_data/,ch29576
+poplar,P1,podel,Populus deltoides,E,pollen,/work/cjtlab/Pdelt/PdeltoidesWV94_445_v2.0.fa,/work/cjtlab/Pdelt/PdeltoidesWV94_445_v2.1.gene_exons.gff3,/scratch/ch29576/pollen_fastq_data/,ch29576
+poplar,P4,podel,Populus deltoides,E,pollen,/work/cjtlab/Pdelt/PdeltoidesWV94_445_v2.0.fa,/work/cjtlab/Pdelt/PdeltoidesWV94_445_v2.1.gene_exons.gff3,/scratch/ch29576/pollen_fastq_data/,ch29576
+eucalyptus,eu1,eugra,Eucalyptus grandis,L,pollen,/work/cjtlab/Database/Egrandis/v2.0/assembly/Egrandis_297_v2.0.fa,/work/cjtlab/Database/Egrandis/v2.0/annotation/Egrandis_297_v2.0.gene_exons.gff3,/scratch/ch29576/pollen_fastq_data/,ch29576
+eucalyptus,eu2,eugra,Eucalyptus grandis,L,pollen,/work/cjtlab/Database/Egrandis/v2.0/assembly/Egrandis_297_v2.0.fa,/work/cjtlab/Database/Egrandis/v2.0/annotation/Egrandis_297_v2.0.gene_exons.gff3,/scratch/ch29576/pollen_fastq_data/,ch29576

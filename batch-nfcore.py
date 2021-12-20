@@ -53,12 +53,12 @@ def transfer_data():
                 f'copying {table.at[i, "genome_fa"]} to {"./data/" + table.at[i,"folder_id"] + "/reference/" + table.at[i, "folder_id"] + "_genome.fa"}')
             shutil.copyfile(table.at[i, "genome_fa"], "./data/" + table.at[i,
                                                                            "folder_id"] + "/reference/" + table.at[i, "folder_id"] + "_genome.fa")
-        # copy gff3
+        # copy gff3, must change the extension to gff
         if not os.path.isfile("./data/" + table.at[i, "folder_id"] + "/reference/" + table.at[i, "folder_id"] + ".gff3"):
             print(
-                f'copying {table.at[i, "gene_gff3"]} to {"./data/" + table.at[i,"folder_id"] + "/reference/" + table.at[i, "folder_id"] + ".gff3"}')
+                f'copying {table.at[i, "gene_gff3"]} to {"./data/" + table.at[i,"folder_id"] + "/reference/" + table.at[i, "folder_id"] + ".gff"}')
             shutil.copyfile(table.at[i, "gene_gff3"], "./data/" + table.at[i,
-                                                                           "folder_id"] + "/reference/" + table.at[i, "folder_id"] + ".gff3")
+                                                                           "folder_id"] + "/reference/" + table.at[i, "folder_id"] + ".gff")
         # copy fastq files
         print(
             f'copying {table.at[i, "fastq_dir"] + table.at[i, "sample_name"] + ".R1.fastq"}')
@@ -83,7 +83,7 @@ def generate_scripts():
         with open(f"./data/{element}/run_nfcore_{element}.sh", "wt") as script:
             script.write("#!/bin/sh\n")
             script.write(f"#SBATCH -J {element}_nfcore\n")
-            script.write("#SBATCH --partition batch\n")
+            script.write("#SBATCH --partition highmem_p\n")
             script.write("#SBATCH --nodes=1\n")
             script.write("#SBATCH --ntasks-per-node=12\n")
             script.write("#SBATCH --time=8:00:00\n")
@@ -98,8 +98,8 @@ def generate_scripts():
             script.write(f"""nextflow run nf-core/rnaseq \
 --input sample_sheet.csv \
 --fasta ./reference/{element}_genome.fa \
---gff ./reference/{element}.gff3 \
--profile singularity --saveReference --saveTrimmed --saveUnaligned --max_memory 128.G""")
+--gff ./reference/{element}.gff \
+-profile singularity --max_memory 128GB""")
 #  --fc_group_features 'gene_id' was removed temporary
         with open(f"./data/{element}/sample_sheet.csv", 'w') as sample_sheet:
             sample_sheet.write("sample,fastq_1,fastq_2,strandedness\n")

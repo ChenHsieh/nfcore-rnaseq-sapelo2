@@ -1,0 +1,9 @@
+cd ./data/potri
+sbatch run_nfcore_potri.sh
+cd ../..
+cd ./data/podel
+sbatch run_nfcore_podel.sh
+cd ../..
+cd ./data/eugra
+sbatch run_nfcore_eugra.sh
+cd ../..
